@@ -35,7 +35,7 @@ const ensureValidConfig = (config) => {
 };
 
 export const loadRelayConfig = (env = process.env) => {
-  const allowedOriginsRaw = env.RELAY_ALLOWED_ORIGIN || env.RELAY_ALLOWED_ORIGINS || '';
+  const allowedOriginsRaw = env.RELAY_ALLOWED_ORIGIN || env.RELAY_ALLOWED_ORIGINS || ''.split(',');
   const allowedOrigins = normalizeOriginList(allowedOriginsRaw);
 
   const config = {
